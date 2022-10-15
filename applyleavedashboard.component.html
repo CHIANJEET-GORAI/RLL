@@ -1,0 +1,55 @@
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div clas="col-md-6 offset-md-3">
+                <h3>Apply leave</h3>
+
+                <form[formGroup]="LeaveForm"(ngSubmit)="OnSubmit()">
+                    <div class="form-group">
+                        <lable>EmployeeID</lable>
+                        <input type="text" formControlName="EmployeeId" class="form-control" [ngClass]="{'is-invalid':submitted &&f['EmployeeId'].errors}"/>
+                        <!--Custom Validators-->
+                        <div*ngIf="submitted&&f['EmployeeId'].errors">
+                            <div*ngIf="submitted&&f['EmployeeId'].errors['required']">
+                                EmployeeId is required and can not be empty.
+                            </div>
+                        </div>
+                    </div>
+                    <!--Starting Date-->
+                    <div class="form-group">
+                        <lable>StartDate</lable>
+                        <input type="date" formControlName="StartDate" class="form-control" [ngClass]="{'is-invalid':submitted &&f['StartDate'].errors}"/>
+                        <!--Custom Validators-->
+                        <div*ngIf="submitted&&f['StartDate'].errors">
+                            <div*ngIf="submitted&&f['StartDate'].errors['required']">
+                                StartDate is required and can not be empty.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <lable>EndDate</lable>
+                        <input type="date" formControlName="EndDate" class="form-control" [ngClass]="{'is-invalid':submitted &&f['EndDate'].errors}"/>
+                        <!--Custom Validators-->
+                        <div*ngIf="submitted&&f['EndDate'].errors">
+                            <div*ngIf="submitted&&f['EndDate'].errors['required']">
+                                EndDate is required and can not be empty.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <lable>Reason</lable>
+                        <input type="text" formControlName="Reason" class="form-control" [ngClass]="{'is-invalid':submitted &&f['EmployeeId'].errors}"/>
+                        <!--Custom Validators-->
+                        <div*ngIf="submitted&&f['EmployeeId'].errors">
+                            <div*ngIf="submitted&&f['EmployeeId'].errors['required']">
+                                Reason is required and can not be empty.
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-3">Apply</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
